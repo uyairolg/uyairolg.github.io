@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeChat Pay Balance Upgrade Assistant · Gloria Yu</title>
+  <meta name="description" content="How I helped WeChat Pay users understand their payment limit and finish upgrading. Draft.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body>
+<!--
+  CASE STUDY TEMPLATE
+  ===================
+  To make a new case study, copy this file (for example to case-04.html),
+  then change: <title>, the hero, the "At a glance" block, each chapter, and the "Next" link.
+  Paths are relative (../assets/...), so the site works at a domain root or under /repo-name/.
+
+  Content rules:
+  - Everything inside <span class="ph"> or marked "Placeholder" is not real yet.
+  - No numbers, quotes, awards or results until Gloria has confirmed them.
+  - Say who did what. "We" for team work, "I" only for her own part.
+  - Leave out anything confidential: client names, internal data, screenshots she can't share.
+-->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <p class="draft-banner">Draft skeleton. Highlighted text and striped images are placeholders, not real content.</p>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="mark" href="../index.html" aria-label="Gloria Yu, home"><svg viewBox="0 0 35 32" aria-hidden="true" focusable="false"><path d="M 16.312 0 C 21.633 0.022 19.208 10.067 19.208 10.067 C 19.208 10.067 31.686 1.209 32.052 10.121 C 32.418 19.032 20.47 17.872 20.47 17.872 C 20.47 17.872 31.456 24.923 24.81 26.694 C 18.163 28.466 14.97 20.692 14.97 20.692 C 14.97 20.692 10.726 29.71 6.434 27.206 C 2.142 24.702 9.596 16.985 9.596 16.985 C 9.596 16.985 -2.964 18.217 0.655 9.989 C 4.275 1.761 14.216 10.864 14.216 10.864 C 14.216 10.864 10.992 -0.022 16.312 0 Z" fill="#fcd1ff" stroke="#050505" stroke-width="1.4" stroke-linejoin="round" transform="translate(1.341 3.419) rotate(510 16.03 13.822)"/></svg></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a class="pill" href="../index.html#work" aria-current="page">Projects</a></li>
+          <li><a class="pill" href="../index.html#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="cs">
+      <!--
+        WECHAT PAY CASE STUDY v3 (Nov 16, 2026) — revised after a five-reviewer pass
+        (strength vs slides, readability, images, role/storyline, visual complexity).
+        Source: Gloria's Figma deck (section 106:82) + her Nov 14 corrections.
+        Rules: pp = percentage points; Phase 3 is planned, not built; "lobby manager";
+        her role stays separate from the design team and engineering.
+        Before publishing: confirm Tencent is OK with these figures and screens being public.
+      -->
+
+      <!-- ============ HERO ============ -->
+      <header class="case-hero wrap">
+        <a class="back-link" href="../index.html#work">← All work</a>
+        <p><span class="tag">Case study 01</span> <span class="tag">Professional · AI product</span></p>
+        <h1>WeChat Pay Balance Upgrade Assistant</h1>
+        <div class="hero-grid">
+          <div>
+            <p class="lede">WeChat Pay users who reach their annual payment limit must upgrade their account, a step that verifies their identity and bank account, before they can keep paying from their Balance. Around 1.12 million people reach the limit each day, and only about 60% finish the upgrade. Over two pilots, I took an AI assistant from answering their questions to guiding them through the whole upgrade.</p>
+            <dl class="facts">
+              <dt>Role</dt><dd>Product Manager, WeChat Pay (Tencent)</dd>
+              <dt>My part</dt><dd>User research and data analysis, product strategy, user flows and wireframes, agent workflow, prompts and knowledge base, QA and evaluation</dd>
+              <dt>Team</dt><dd>WeChat Pay design team (final UI), engineering (build)</dd>
+              <dt>Time</dt><dd>May 2026 – present</dd>
+            </dl>
+          </div>
+          <figure>
+            <img src="../assets/img/wechat/cover-hand.png" width="1162" height="1146"
+                 alt="A hand holding a phone with the assistant showing past payment usage and a forecast of when the annual limit will be reached.">
+          </figure>
+        </div>
+      </header>
+
+      <!-- ============ THE LOGIC ============ -->
+      <section class="wrap" aria-labelledby="logic-title">
+        <p class="meta-line">The logic</p>
+        <h2 id="logic-title">Each step answered a question the last one raised</h2>
+        <ol class="logic">
+          <li>
+            <p class="step">Listen</p>
+            <p class="q">Why do people get stuck at the limit?</p>
+            <p class="res"><b>3 barriers</b>found in 600+ posts and 2,127 complaints</p>
+          </li>
+          <li>
+            <p class="step">Phase 1 · Answer</p>
+            <p class="q">Can an AI assistant help people understand?</p>
+            <p class="res"><b>58.9% → 62.2%</b>finished the upgrade</p>
+          </li>
+          <li>
+            <p class="step">Phase 2 · Guide</p>
+            <p class="q">Where do people actually stop, and why?</p>
+            <p class="res"><b>+4.82 points</b>more people upgraded</p>
+          </li>
+          <li>
+            <p class="step">Phase 3 · Connect</p>
+            <p class="q">Can the same help reach other payment tasks?</p>
+            <p class="res"><b>Planned</b>not built yet</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============ CHAPTER NAV ============ -->
+      <nav class="chapters" aria-label="Chapters">
+        <div class="wrap">
+          <ol>
+            <li><a href="#listen"><span>01</span> Listen</a></li>
+            <li><a href="#phase1"><span>02</span> Phase 1</a></li>
+            <li><a href="#phase2"><span>03</span> Phase 2</a></li>
+            <li><a href="#phase3"><span>04</span> Phase 3</a></li>
+            <li><a href="#reflect"><span>05</span> What I learned</a></li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- ============ 01 LISTEN ============ -->
+      <section class="chapter wrap" id="listen" aria-labelledby="listen-title">
+        <p class="meta-line">01 · Listen</p>
+        <h2 id="listen-title">People didn't understand the upgrade, so many never started</h2>
+        <div class="split2">
+          <div>
+            <p>I analyzed customer complaints, backed by social listening on popular platforms: <strong>600+ social posts</strong> and <strong>2,127 complaint cases</strong>. Through thematic analysis, I grouped them by what was stopping people, and three barriers to understanding kept coming up.</p>
+          </div>
+          <figure>
+            <img src="../assets/img/wechat/p1-listening.png" width="803" height="655" loading="lazy"
+                 alt="A sample of the 600+ social posts and the log of 2,127 complaint cases that were analyzed.">
+            <figcaption>Social posts and complaint cases I reviewed.</figcaption>
+          </figure>
+        </div>
+        <div class="card-row">
+          <div class="card"><div class="num">22.13%</div><div class="lbl">Limits and next steps were unclear</div></div>
+          <div class="card"><div class="num">19.40%</div><div class="lbl">The impact on their account was unclear</div></div>
+          <div class="card"><div class="num">9.30%</div><div class="lbl">They had concerns about safety</div></div>
+        </div>
+        <p class="note">Share of complaint cases, from my thematic analysis and grouping of the posts and cases.</p>
+
+        <div class="why">
+          <p class="meta-line">Why an assistant</p>
+          <p>I wanted to learn if an AI assistant could help people understand WeChat Balance rules, ask about their own situation, and follow up when something was unclear.</p>
+        </div>
+      </section>
+
+      <!-- ============ 02 PHASE 1 ============ -->
+      <section class="chapter wrap" id="phase1" aria-labelledby="phase1-title">
+        <p class="meta-line">02 · Phase 1 · May – Jul 2026</p>
+        <h2 id="phase1-title">Answering questions lifted upgrades by 3.2 points</h2>
+        <div class="split2">
+          <div>
+            <p>I designed the assistant's prompts and knowledge base from approved product and policy documentation, adapted the approved answers, and ran QA before launch. The assistant could:</p>
+            <ul class="bullets">
+              <li>answer <strong>free-form</strong> and follow-up questions</li>
+              <li>present FAQs on fees, safety, eligibility and benefits</li>
+              <li>answer from approved <strong>product and policy</strong> documentation</li>
+              <li>guide people to the right <strong>upgrade path</strong> or to customer support</li>
+            </ul>
+          </div>
+          <ul class="phones phones--two">
+            <li><img src="../assets/img/wechat/p1-upgrade-page.png" width="190" height="434" loading="lazy" alt="Balance Upgrade page with an entry point: Questions about upgrading? Ask the Balance AI Assistant."><p class="cap"><b>Upgrade page</b>A new entry point invites questions</p></li>
+            <li><img src="../assets/img/wechat/p1-assistant-page.png" width="190" height="434" loading="lazy" alt="The assistant page with an introduction, FAQs and free-form questions and answers."><p class="cap"><b>Assistant</b>Introduction, FAQs and free-form chat</p></li>
+          </ul>
+        </div>
+        <div class="card-row">
+          <div class="card"><div class="num">58.93%</div><div class="lbl">finished the upgrade without the assistant (n = 3,487)</div></div>
+          <div class="card"><div class="num">62.15%</div><div class="lbl">finished with the assistant (n = 5,393)</div></div>
+          <div class="card card--key"><div class="num">+3.22</div><div class="lbl">percentage points (pp)</div></div>
+        </div>
+        <p class="note">An encouraging early signal, not proof. <span class="ph">[How people were assigned to each group, and for how long]</span></p>
+
+        <div class="why">
+          <p class="meta-line">Why Phase 2</p>
+          <p>Answers helped, but about 38% of people with the assistant still didn't finish. Better answers couldn't tell me where they gave up, so I went to the funnel.</p>
+        </div>
+      </section>
+
+      <!-- ============ 03 PHASE 2 ============ -->
+      <section class="chapter wrap" id="phase2" aria-labelledby="phase2-title">
+        <p class="meta-line">03 · Phase 2 · Jul – Nov 2026</p>
+        <h2 id="phase2-title">The funnel showed two different gaps</h2>
+        <p style="margin-top:var(--s3)">I reviewed the full upgrade journey, counted in unique visits per day, to find where people stopped. 44% of people reaching the limit could upgrade right away, and most of them did. The losses were on the manual path.</p>
+
+        <div class="funnel">
+          <div>
+            <h4>Eligible for an immediate upgrade</h4>
+            <ol>
+              <li>Reached the payment limit<span class="n">1,115,380</span></li>
+              <li>Eligible for immediate upgrade<span class="n">491,994</span><span class="r">44.11% of those reaching the limit</span></li>
+              <li>Upgrade completed<span class="n">440,335</span><span class="r">89.50%</span></li>
+            </ol>
+          </div>
+          <div>
+            <h4>Manual upgrade path</h4>
+            <ol>
+              <li>Visited the manual upgrade page<span class="n">585,575</span><span class="r">52.50% of those reaching the limit</span></li>
+              <li class="gap">Tapped “Upgrade for Free”<span class="n">409,903</span><span class="r"><strong>Gap 1:</strong> only 70.00% of visitors started</span></li>
+              <li>Attempted the upgrade<span class="n">399,655</span><span class="r">97.50%</span></li>
+              <li class="gap">Bank details verified<span class="n">223,985</span><span class="r"><strong>Gap 2:</strong> only 56.04% of attempts passed verification</span></li>
+            </ol>
+          </div>
+        </div>
+        <p class="total">End to end: 664,320 upgrades a day, 59.56% of people reaching the limit.</p>
+
+        <div class="gaps2">
+          <div>
+            <h3>Gap 1 · Willingness: “Why should I upgrade?”</h3>
+            <p>Some people reached the upgrade page but didn't start. Research suggested they needed clearer explanations of the benefits, whether the upgrade suited them, and what it required.</p>
+            <table>
+              <thead><tr><th>Stage</th><th>Where people need help</th><th>Assistant's role</th></tr></thead>
+              <tbody>
+                <tr><td>Hit a limit</td><td>The message leaves them unsure why payments were blocked</td><td>Explain the limit and its impact</td></tr>
+                <tr><td>Explore options</td><td>Scattered information makes suitable options hard to find</td><td>Show the options and explain the differences</td></tr>
+                <tr><td>Decide</td><td>Unclear benefits and requirements make the decision difficult</td><td>Explain what upgrading offers and requires</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3>Gap 2 · Capability: “How do I complete the upgrade?”</h3>
+            <p>Others started but didn't finish. Research suggested they struggled with verification and needed clearer instructions when something went wrong.</p>
+            <table>
+              <thead><tr><th>Stage</th><th>Where people need help</th><th>Assistant's role</th></tr></thead>
+              <tbody>
+                <tr><td>Complete the steps</td><td>They struggle to find where to start and get help</td><td>Show where to start and guide each step</td></tr>
+                <tr><td>Fix a problem</td><td>Error messages leave them unsure how to continue</td><td>Explain the error and offer a next step</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h3 style="margin-top:var(--s6)">One assistant for the whole upgrade</h3>
+        <p>I redesigned the assistant's flow so it works like a bank's <strong>lobby manager</strong>, the staff member who asks what you need and walks you to the right counter. It explains the limit, clarifies options, supports the decision, guides each step and helps resolve problems. Its pattern is: <strong>explain the options, act only with approval, verify the result.</strong></p>
+        <p>Compared with Phase 1, it can complete the upgrade inside the chat and verify across phone numbers on linked cards. It's backed by a broader knowledge base, a more structured system prompt, and an evaluation process. I designed the agent workflow, prompts and knowledge base, and ran evaluation and iteration; engineering built it.</p>
+
+        <div class="cols3">
+          <div>
+            <h4>Product documentation</h4>
+            <ul class="bullets"><li>Regulatory and bank requirements</li><li>Account and verification rules</li><li>Upgrade and recovery procedures</li></ul>
+          </div>
+          <div>
+            <h4>User context</h4>
+            <ul class="bullets"><li>Account status, product type and eligibility</li><li>Current page and journey stage</li><li>Verification and error status</li></ul>
+          </div>
+          <div>
+            <h4>AI infrastructure</h4>
+            <ul class="bullets"><li>Foundation model and system prompt</li><li>Intent and context management</li><li>Knowledge retrieval and tool calling</li><li>Response generation and validation</li><li>Safety guardrails</li></ul>
+          </div>
+        </div>
+
+        <figure class="full">
+          <img src="../assets/img/wechat/p2-agent-flow.png" width="1072" height="1286" loading="lazy"
+               alt="Agent flow and evaluation loop diagram, described in the numbered steps below.">
+        </figure>
+        <div class="split2" style="margin-top:var(--s3)">
+          <div>
+            <h4 class="meta-line" style="font-size:1rem">How each turn works</h4>
+            <ol class="steps">
+              <li><strong>Build context</strong> from the conversation, account status and system instructions.</li>
+              <li><strong>Choose the next step:</strong> get information (approved knowledge, account data), or take action after checking eligibility, required inputs, permission and consent.</li>
+              <li><strong>Prepare and check the response</strong> for accuracy, safety and validity.</li>
+              <li><strong>Respond and save state</strong>, sending the full interaction record to evaluation.</li>
+            </ol>
+          </div>
+          <div>
+            <h4 class="meta-line" style="font-size:1rem">How it improves</h4>
+            <ol class="steps">
+              <li><strong>Review performance:</strong> answers, actions and user outcomes.</li>
+              <li><strong>Make improvements</strong> to prompts, knowledge and tool logic.</li>
+              <li><strong>Test changes</strong> with evaluation and regression tests.</li>
+              <li><strong>Release and monitor</strong> only what passes; otherwise revise and retest.</li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 style="margin-top:var(--s6)">The new upgrade flow</h3>
+        <p>I designed the flow and mid-fidelity wireframes; the design team applied the WeChat design system. English translations are added in blue.</p>
+        <ul class="phones">
+          <li><img src="../assets/img/wechat/flow-1-limit.png" width="292" height="600" loading="lazy" alt="Balance page showing the payment limit has been reached, with a link to view options."><p class="cap"><b>1 · Limit reached</b>A link to view options</p></li>
+          <li><img src="../assets/img/wechat/flow-2-home.png" width="292" height="600" loading="lazy" alt="Assistant home page with a chart of past payment usage and an estimate of when the limit will be reached."><p class="cap"><b>2 · Limit forecast</b>Past usage, and when they'll reach the annual limit</p></li>
+          <li><img src="../assets/img/wechat/flow-3-verify.png" width="292" height="600" loading="lazy" alt="The assistant verifies a bank card automatically: ICBC card ending 4121 passed verification."><p class="cap"><b>3 · Automatic verification</b>The assistant checks the card in chat</p></li>
+          <li><img src="../assets/img/wechat/flow-5-complete.png" width="292" height="600" loading="lazy" alt="Upgrade successful screen: the Balance upgrade is active, with a higher payment limit."><p class="cap"><b>4 · Upgrade complete</b>A higher limit, confirmed in chat</p></li>
+        </ul>
+
+        <div class="split2">
+          <figure><img src="../assets/img/wechat/flow-4-background.png" width="262" height="168" loading="lazy" alt="Dialog: allow the assistant to attempt the upgrade and notify you of the result?" style="max-width:16rem"></figure>
+          <div>
+            <h4 class="meta-line" style="font-size:1rem">Background upgrade</h4>
+            <p>I proposed letting people in a hurry continue the upgrade in the background, with their approval, and get a notification when it finishes.</p>
+          </div>
+        </div>
+        <div class="split2">
+          <figure><img src="../assets/img/wechat/p2-cards-verify.png" width="385" height="334" loading="lazy" alt="The assistant checks several linked bank cards in turn: one failed, one verifying, one pending." style="max-width:24rem"></figure>
+          <div>
+            <h4 class="meta-line" style="font-size:1rem">Verification across linked cards</h4>
+            <p>I proposed this: if verification fails with one card's registered phone number, the system tries the person's other linked cards. Only one needs to pass.</p>
+            <p>If it still fails, the assistant offers a next step: customer support, adding personal information, or linking a new bank card.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:var(--s6)">Phase 2 pilot results</h3>
+        <div class="card-row">
+          <div class="card card--key"><div class="num">+4.82 pp</div><div class="lbl">upgrade conversion</div></div>
+          <div class="card"><div class="num">−8.12%</div><div class="lbl">flow abandonment</div></div>
+          <div class="card"><div class="num">−13.67%</div><div class="lbl">time to complete</div></div>
+        </div>
+        <p class="note">14-day pilot, about 5,600 people in each group. <span class="ph">[Compared with no assistant or with Phase 1? Are −8.12% and −13.67% relative changes?]</span> Until that's confirmed, don't compare this lift directly with Phase 1's.</p>
+
+        <div class="why">
+          <p class="meta-line">Why Phase 3</p>
+          <p>The same pattern (explain the options, act only with approval, verify the result) could help with payment tasks well beyond the upgrade.</p>
+        </div>
+      </section>
+
+      <!-- ============ 04 PHASE 3 ============ -->
+      <section class="chapter wrap" id="phase3" aria-labelledby="phase3-title">
+        <p class="meta-line">04 · Phase 3 · December 2026 onward · planned, not built</p>
+        <h2 id="phase3-title">Next: one assistant for payment tasks across WeChat</h2>
+        <p style="margin-top:var(--s3)">The plan connects <strong>Xiaowei</strong>, WeChat's general AI assistant, with payment expertise and services. Xiaowei understands what the person wants and hands payment tasks to a WeChat Pay Assistant.</p>
+        <div class="system">
+          <div class="card"><h4>Xiaowei</h4><p class="lbl" style="margin:0">Understands the person's goal and delegates the task</p></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="card card--key"><h4>WeChat Pay Assistant</h4><ul class="bullets"><li>Explain options</li><li>Act with approval</li><li>Verify the result</li></ul></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="card"><h4>Products and services</h4><ul class="bullets"><li>Wallet, identity and limits, payments and refunds, credit card repayment, family payments, Pay Score</li><li>Utilities, wealth and insurance, travel, shopping, public services, entertainment</li></ul></div>
+        </div>
+        <figure class="full">
+          <img src="../assets/img/wechat/p3-concept.png" width="1195" height="664" loading="lazy"
+               alt="Concept wireframes, translated: review spending, confirm cancellations, track progress.">
+          <figcaption>Concept wireframes for one use case, cutting subscription costs: review spending, confirm cancellations, track progress. Translated, and not built.</figcaption>
+        </figure>
+        <div class="cols3" style="grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))">
+          <div><h4>Intended outcome: complete more payments</h4><p class="note" style="color:var(--ink-2)">Help more people finish payments, growing transaction volume.</p></div>
+          <div><h4>Intended outcome: fewer support requests</h4><p class="note" style="color:var(--ink-2)">Help more people resolve issues themselves, lowering support costs.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 05 WHAT I LEARNED ============ -->
+      <section class="chapter wrap" id="reflect" aria-labelledby="reflect-title">
+        <p class="meta-line">05 · What I learned</p>
+        <h2 id="reflect-title">One problem can look like two</h2>
+        <div class="cols3">
+          <div>
+            <h4>What worked</h4>
+            <ul class="bullets">
+              <li>Separating “won't” from “can't” showed what each person needed: willingness needed reasons; capability needed steps.</li>
+              <li>Explaining isn't the same as unblocking. Phase 1 explained; Phase 2 had to change the flow.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What I don't know yet</h4>
+            <ul class="bullets">
+              <li>Phase 2 changed both the AI and the flow, so I can't yet say which part drove the lift.</li>
+              <li>Both pilots were short. <span class="ph">[Add any later results]</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Next</h4>
+            <ul class="bullets">
+              <li><span class="ph">[Suggested, confirm: test the AI guidance separately from the flow changes]</span></li>
+              <li>Phase 3, if it goes ahead</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <nav class="next-case" aria-label="Next case study">
+      <div class="wrap">
+        <a href="case-02.html"><p class="eyebrow">Next</p><strong><span class="ph">[Case study 2 title]</span></strong></a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="bar">
+      <div>
+        <a class="mark" href="../index.html" aria-label="Gloria Yu, home"><svg viewBox="0 0 35 32" aria-hidden="true" focusable="false"><path d="M 16.312 0 C 21.633 0.022 19.208 10.067 19.208 10.067 C 19.208 10.067 31.686 1.209 32.052 10.121 C 32.418 19.032 20.47 17.872 20.47 17.872 C 20.47 17.872 31.456 24.923 24.81 26.694 C 18.163 28.466 14.97 20.692 14.97 20.692 C 14.97 20.692 10.726 29.71 6.434 27.206 C 2.142 24.702 9.596 16.985 9.596 16.985 C 9.596 16.985 -2.964 18.217 0.655 9.989 C 4.275 1.761 14.216 10.864 14.216 10.864 C 14.216 10.864 10.992 -0.022 16.312 0 Z" fill="#fcd1ff" stroke="#050505" stroke-width="1.4" stroke-linejoin="round" transform="translate(1.341 3.419) rotate(510 16.03 13.822)"/></svg></a>
+        <p>©gloriayu<span data-year>2026</span></p>
+      </div>
+      <ul>
+        <li><a href="#main">Back to top</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

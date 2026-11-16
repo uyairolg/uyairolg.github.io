@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Placeholder image">
+  <defs><pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="24" stroke="#cfe9fa" stroke-width="1"/></pattern></defs>
+  <rect width="1000" height="1000" fill="#e8f6ff"/><rect width="1000" height="1000" fill="url(#p)"/>
+  <rect x="0.5" y="0.5" width="999" height="999" fill="none" stroke="#bbe3fc"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="ui-monospace, Menlo, monospace" font-size="25" fill="#3d6a87" letter-spacing="1">PLACEHOLDER · 1:1</text>
+</svg>
