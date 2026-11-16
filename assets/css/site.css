@@ -483,3 +483,21 @@ figcaption strong { color: var(--ink); font-weight: 600; }
 .cs .system .card .bullets { font-size: var(--t-meta); margin-top: 0; }
 
 .cs .chapter:last-of-type { padding-bottom: var(--s7); }
+
+/* ---- Layout fixes (Nov 16 review of live page) ---- */
+.cs .hero-grid { align-items: start; }
+.cs .hero-grid figure img { background: var(--sky-soft); }
+.cs .logic { margin-bottom: var(--s6); }
+.cs .split2 > figure { align-self: start; }
+.cs .gaps2 > div > p { margin-top: var(--s1); }
+.cs table { table-layout: fixed; }
+.cs th:nth-child(1), .cs td:nth-child(1) { width: 22%; }
+.cs th:nth-child(2), .cs td:nth-child(2) { width: 42%; }
+.cs td:first-child { white-space: normal; }
+.cs figure.narrow { max-width: 760px; margin-inline: auto; }
+.cs .media-small img { max-width: 22rem; }
+.cs .outcomes { display: grid; gap: var(--s3); margin-top: var(--s4); }
+@media (min-width: 40rem) { .cs .outcomes { grid-template-columns: 1fr 1fr; } }
+.cs .outcomes h4 { font: 400 1.25rem/1.3 var(--serif); margin: 0 0 0.25rem; }
+.cs .outcomes p { margin: 0; color: var(--ink-2); font-size: var(--t-meta); }
+.cs .full + .outcomes { margin-top: var(--s5); }
