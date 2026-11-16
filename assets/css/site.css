@@ -501,3 +501,6 @@ figcaption strong { color: var(--ink); font-weight: 600; }
 .cs .outcomes h4 { font: 400 1.25rem/1.3 var(--serif); margin: 0 0 0.25rem; }
 .cs .outcomes p { margin: 0; color: var(--ink-2); font-size: var(--t-meta); }
 .cs .full + .outcomes { margin-top: var(--s5); }
+.cs figure img, .cs .phones img { background: none; }
+.cs .hero-grid figure img { background: var(--sky-soft); }
+.cs .media-small img { border-radius: 0; }
